@@ -13,7 +13,7 @@ ADD downloads /tmp/splunk
 RUN yum install -y wget
 
 # install splunk using .rpm in /tmp/splunk (staged in downloads)
-RUN rpm -i /tmp/splunk/splunk-6.1.4-233537-linux-2.6-x86_64.rpm
+RUN wget -O /tmp/splunk/splunk-6.1.5-239630-linux-2.6-x86_64.rpm 'http://www.splunk.com/page/download_track?file=6.1.5/splunk/linux/splunk-6.1.5-239630-linux-2.6-x86_64.rpm&ac=&wget=true&name=wget&platform=Linux&architecture=x86_64&version=6.1.5&product=splunk&typed=release'
 
 # Create service
 RUN /opt/splunk/bin/splunk enable boot-start --accept-license
